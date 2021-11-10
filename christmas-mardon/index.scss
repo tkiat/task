@@ -1,0 +1,204 @@
+$snow_width: 1.5rem;
+$snow_height: 1.5rem;
+$s1:"";
+$s2:"";
+$s3:"";
+$s4:"";
+$s5:"";
+@for $i from 1 through 100 {
+  $s1: $s1 + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
+  $s2: $s2 + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
+  $s3: $s3 + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
+  $s4: $s4 + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
+  $s5: $s5 + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
+  @if $i < 100 {
+    $s1: $s1 + ",";
+    $s2: $s2 + ",";
+    $s3: $s3 + ",";
+    $s4: $s4 + ",";
+    $s5: $s5 + ",";
+  }
+}
+$s1_mobile:"";
+$s2_mobile:"";
+$s3_mobile:"";
+$s4_mobile:"";
+$s5_mobile:"";
+@for $i from 1 through 20 {
+  $s1_mobile: $s1_mobile + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
+  $s2_mobile: $s2_mobile + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
+  $s3_mobile: $s3_mobile + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
+  $s4_mobile: $s4_mobile + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
+  $s5_mobile: $s5_mobile + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
+  @if $i < 20 {
+    $s1_mobile: $s1_mobile + ",";
+    $s2_mobile: $s2_mobile + ",";
+    $s3_mobile: $s3_mobile + ",";
+    $s4_mobile: $s4_mobile + ",";
+    $s5_mobile: $s5_mobile + ",";
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.body {
+  position: relative;
+}
+.credit {
+  font-family: cursive, sans-serif;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+.credit a {
+  color: inherit;
+}
+.layer1 {
+  width: $snow_width;
+  height: $snow_height;
+  filter: blur(2px);
+  box-shadow: #{$s1};
+  animation-duration: 6s;
+}
+.layer1.a {
+  animation-delay: 3s;
+}
+.layer2 {
+  width: $snow_width - 0.5rem;
+  height: $snow_height - 0.15rem;
+  filter: blur(3px);
+  box-shadow: #{$s2};
+  animation-duration: 8s;
+}
+.layer2.a {
+  animation-delay: 4s;
+}
+.layer3 {
+  width: $snow_width - 0.15rem*2;
+  height: $snow_height - 0.15rem*2;
+  filter: blur(4px);
+  box-shadow: #{$s3};
+  animation-duration: 10s;
+}
+.layer3.a {
+  animation-delay: 5s;
+}
+.layer4 {
+  width: $snow_width - 0.15rem*3;
+  height: $snow_height - 0.15rem*3;
+  filter: blur(5px);
+  box-shadow: #{$s4};
+  animation-duration: 12s;
+}
+.layer4.a {
+  animation-delay: 6s;
+}
+.layer5 {
+  width: $snow_width - 0.15rem*4;
+  height: $snow_height - 0.15rem*4;
+  filter: blur(6px);
+  box-shadow: #{$s5};
+  animation-duration: 14s;
+}
+.layer5.a {
+  animation-delay: 7s;
+}
+.main {
+  width: 100%;
+  text-align: center;
+  font-family: 'Mountains of Christmas', cursive, sans-serif;
+  position: absolute;
+  top: 20vh;
+  font-size: 80px;
+  color: black;
+  white-space: pre-wrap;
+}
+.snow {
+  border-radius: 50%;
+  opacity: 0.8;
+  position: absolute;
+  top: -100vh;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.star {
+  position: fixed;
+}
+.star.star1 {
+  top:20vh;left:60%;
+}
+.star.star2 {
+  top:26vh;left:30%;
+}
+.star.star3 {
+  top:43vh;left:50%;
+}
+.star.star4 {
+  top:50vh;left:70%;
+}
+.star svg path {
+  animation-name: color;
+  animation-timing-function: step-end;
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
+}
+.star2 svg path {
+  animation-delay: -1.5s;
+}
+.star3 svg path {
+  animation-delay: -3s;
+}
+.star4 svg path {
+  animation-delay: -4.5s;
+}
+.wrapper {
+  width:100%;
+  height:100vh;
+  background-image: url('assets/mobile.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.6;
+}
+@keyframes color {
+  0% {
+    fill: lime;
+  }
+  15% {
+    fill: fuchsia;
+  }
+  30% {
+    fill: orangered;
+  }
+  45% {
+    fill: dodgerblue;
+  }
+  60% {
+    fill: yellow;
+  }
+  75% {
+    fill: cyan;
+  }
+  90% {
+    fill: red;
+  }
+}
+@keyframes fall {
+  100% {
+    transform: translate(0, 200vh);
+  }
+}
+@media screen and (max-width: 581px) {
+  .main {
+    font-size: 40px;
+  }
+  .layer1 { box-shadow: #{$s1_mobile}; }
+  .layer2 { box-shadow: #{$s2_mobile}; }
+  .layer3 { box-shadow: #{$s3_mobile}; }
+  .layer4 { box-shadow: #{$s4_mobile}; }
+  .layer5 { box-shadow: #{$s5_mobile}; }
+}
