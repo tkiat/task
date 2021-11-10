@@ -3,39 +3,27 @@ $snow_height: 1.5rem;
 $s1:"";
 $s2:"";
 $s3:"";
-$s4:"";
-$s5:"";
 @for $i from 1 through 100 {
   $s1: $s1 + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
   $s2: $s2 + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
   $s3: $s3 + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
-  $s4: $s4 + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
-  $s5: $s5 + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
   @if $i < 100 {
     $s1: $s1 + ",";
     $s2: $s2 + ",";
     $s3: $s3 + ",";
-    $s4: $s4 + ",";
-    $s5: $s5 + ",";
   }
 }
 $s1_mobile:"";
 $s2_mobile:"";
 $s3_mobile:"";
-$s4_mobile:"";
-$s5_mobile:"";
 @for $i from 1 through 20 {
   $s1_mobile: $s1_mobile + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
   $s2_mobile: $s2_mobile + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
   $s3_mobile: $s3_mobile + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
-  $s4_mobile: $s4_mobile + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
-  $s5_mobile: $s5_mobile + random(100)*1vw + " " + random(100)*1vh + " " + 0px + " " + random(40)*-0.01rem + #fff;
   @if $i < 20 {
     $s1_mobile: $s1_mobile + ",";
     $s2_mobile: $s2_mobile + ",";
     $s3_mobile: $s3_mobile + ",";
-    $s4_mobile: $s4_mobile + ",";
-    $s5_mobile: $s5_mobile + ",";
   }
 }
 * {
@@ -85,26 +73,6 @@ $s5_mobile:"";
 }
 .layer3.a {
   animation-delay: 5s;
-}
-.layer4 {
-  width: $snow_width - 0.15rem*3;
-  height: $snow_height - 0.15rem*3;
-  filter: blur(5px);
-  box-shadow: #{$s4};
-  animation-duration: 12s;
-}
-.layer4.a {
-  animation-delay: 6s;
-}
-.layer5 {
-  width: $snow_width - 0.15rem*4;
-  height: $snow_height - 0.15rem*4;
-  filter: blur(6px);
-  box-shadow: #{$s5};
-  animation-duration: 14s;
-}
-.layer5.a {
-  animation-delay: 7s;
 }
 .main {
   width: 100%;
@@ -192,6 +160,7 @@ $s5_mobile:"";
     transform: translate(0, 200vh);
   }
 }
+
 @media screen and (max-width: 581px) {
   .main {
     font-size: 40px;
@@ -199,6 +168,4 @@ $s5_mobile:"";
   .layer1 { box-shadow: #{$s1_mobile}; }
   .layer2 { box-shadow: #{$s2_mobile}; }
   .layer3 { box-shadow: #{$s3_mobile}; }
-  .layer4 { box-shadow: #{$s4_mobile}; }
-  .layer5 { box-shadow: #{$s5_mobile}; }
 }
